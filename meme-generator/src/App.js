@@ -1,10 +1,13 @@
-import logo from './logo.svg';
-import classes from "./styles.module.css"
+import React from 'react';
 import Header from "./components/Header"
+import Meme from './components/Meme';
 
 function App() {
   return (
-    <Header />
+    <React.Fragment>
+      <Header />
+      <Meme />
+    </React.Fragment>
   );
 }
 
