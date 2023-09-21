@@ -26,7 +26,11 @@ const Meme = () =>{
                     Get a new meme image
                 </button>
         </div>
-        {/* Meme Image and Text Render Here */}
+        <div className={classes.meme}>
+                <img src="http://i.imgflip.com/1bij.jpg" className={classes["meme-image"]} />
+                <h2 className={`${classes["meme-text"]} ${classes["top"]}`}>TOP TEXT</h2>
+                <h2 className={`${classes["meme-text"]} ${classes["bottom"]}`}>BOTTOM TEXT</h2>
+            </div>
        </main> 
     )
 }
