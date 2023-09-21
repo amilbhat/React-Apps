@@ -1,8 +1,22 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import classes from "./../styles.module.css"
 
 const Meme = () =>{
-    // API = https://api.imgflip.com/get_memes
+    const API_URL = "https://api.imgflip.com/get_memes"
+    const [memeUrl, setMemeUrl] = useState("http://i.imgflip.com/1bij.jpg")
+    const  [topText, setTopText] = useState("TOP TEXT")
+    const  [bottomText, setBottomText] = useState("BOTTOM TEXT")
+    const [allMemes, setAllMemes] = useState([])
+
+    useEffect(()=>{
+        // convert to async function for cleanup
+        fetch(API_URL)
+        .then(response => response.json())
+        .then(data => {
+            setAllMemes(data.data.memes)
+            console.log(data.data.memes)
+        })
+    }, [])
 
 
     return (
