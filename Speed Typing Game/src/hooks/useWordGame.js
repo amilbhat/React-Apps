@@ -1,4 +1,5 @@
 import {useState, useEffect, useRef} from "react"
+// import "./../styles.css"
 
 function useWordGame(startingTime = 10) {
     const [text, setText] = useState("")

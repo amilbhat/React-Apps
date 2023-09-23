@@ -1,5 +1,6 @@
 import React, {useState, useEffect, useRef} from "react"
 import useWordGame from "./hooks/useWordGame"
+import "./styles.css"
 
 function App() {
     const {
@@ -10,7 +11,7 @@ function App() {
         timeRemaining, 
         startGame, 
         wordCount
-    } = useWordGame(5)
+    } = useWordGame(30)
     
     return (
         <div>
