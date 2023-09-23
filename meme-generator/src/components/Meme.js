@@ -9,15 +9,27 @@ const Meme = () =>{
     const [allMemes, setAllMemes] = useState([])
 
     useEffect(()=>{
-        // convert to async function for cleanup
-        fetch(API_URL)
-        .then(response => response.json())
-        .then(data => {
+        const getMemes = async () => {
+            const response = await fetch(API_URL)
+            const data = await response.json()
             setAllMemes(data.data.memes)
-            console.log(data.data.memes)
-        })
+        }
+
+        getMemes()
     }, [])
 
+    const topTextHandler = (event) => {
+        setTopText(event.target.value)
+    }
+
+    const bottomTextHandler = (event) => {
+        setBottomText(event.target.value)
+    }
+
+    const memeHandler = () => {
+        const randomNumber = Math.floor(Math.random() * allMemes.length)
+        setMemeUrl(allMemes[randomNumber].url)
+    }
 
     return (
        <main>
@@ -27,23 +39,28 @@ const Meme = () =>{
                     placeholder="Top text"
                     className={classes["form-input"]}
                     name="topText"
+                    value={topText}
+                    onChange={topTextHandler}
                 />
                 <input 
                     type="text"
                     placeholder="Bottom text"
                     className={classes["form-input"]}
                     name="bottomText"
+                    value={bottomText}
+                    onChange={bottomTextHandler}
                 />
                 <button 
                     className={classes["form-button"]}
+                    onClick={memeHandler}
                 >
                     Get a new meme image
                 </button>
         </div>
         <div className={classes.meme}>
-                <img src="http://i.imgflip.com/1bij.jpg" className={classes["meme-image"]} />
-                <h2 className={`${classes["meme-text"]} ${classes["top"]}`}>TOP TEXT</h2>
-                <h2 className={`${classes["meme-text"]} ${classes["bottom"]}`}>BOTTOM TEXT</h2>
+                <img src={memeUrl} className={classes["meme-image"]} alt="fetched meme"/>
+                <h2 className={`${classes["meme-text"]} ${classes["top"]}`}>{topText}</h2>
+                <h2 className={`${classes["meme-text"]} ${classes["bottom"]}`}>{bottomText}</h2>
             </div>
        </main> 
     )
