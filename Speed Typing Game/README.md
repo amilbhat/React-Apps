@@ -27,13 +27,13 @@ Follow these steps to set up the application locally:
 1. Clone the repository to your local machine:
 
    ```shell
-   git clone https://github.com/your-username/react-speed-calculator.git
+   git clone https://github.com/amilbhat/React-Apps/tree/474afc3024a189faf9c47c5ff8a1202a961f27da/Speed%20Typing%20Game
    ```
 
 2. Navigate to the project directory:
 
    ```shell
-   cd react-speed-calculator
+   cd speed-typing-game
    ```
 
 3. Install the project dependencies using npm or yarn:
@@ -75,7 +75,7 @@ Contributions to this project are welcome. If you would like to contribute, plea
 2. Clone your forked repository to your local machine:
 
    ```shell
-   git clone https://github.com/your-username/react-speed-calculator.git
+   git clone https://github.com/amilbhat/React-Apps/tree/474afc3024a189faf9c47c5ff8a1202a961f27da/Speed%20Typing%20Game
    ```
 
 3. Create a new branch for your feature or bug fix:
